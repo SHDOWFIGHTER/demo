@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physiologist Demo – Full Pro Version</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
+    body { background:#f7f9fc; color:#2c3e50; line-height:1.6; transition:0.3s; }
+    body.dark { background:#0e1117; color:#d1d5db; }
+
+    /* NAVBAR */
+    .navbar { background:white; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 10px rgba(0,0,0,0.05); position:sticky; top:0; z-index:100; }
+    body.dark .navbar { background:#1a1f27; }
+    .navbar h2 { font-size:28px; color:#0055a5; font-weight:700; }
+    .nav-links a { margin-left:25px; text-decoration:none; color:#333; font-size:17px; transition:0.3s; }
+    body.dark .nav-links a { color:#e5e7eb; }
+
+    .nav-links a:hover { color:#0055a5; }
+
+    /* TOGGLE BUTTON */
+    .toggle-btn { background:#0055a5; color:white; padding:10px 18px; border:none; border-radius:6px; cursor:pointer; }
+
+    /* HERO */
+    .hero { background:linear-gradient(rgba(0,85,165,0.6),rgba(0,85,165,0.6)),url('https://images.unsplash.com/photo-1580281658629-6a12f6a5ee03?auto=format&fit=crop&w=1600&q=80'); height:70vh; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; padding-left:60px; color:white; opacity:0; transform:translateY(30px); animation:fadeUp 1.2s forwards; }
+
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+    .hero h1 { font-size:54px; font-weight:800; max-width:600px; }
+    .hero p { margin-top:15px; font-size:20px; max-width:500px; }
+    .hero button { margin-top:30px; padding:15px 35px; font-size:18px; background:white; border:none; border-radius:6px; color:#0055a5; font-weight:600; cursor:pointer; transition:0.3s; }
+    .hero button:hover { background:#e8f3ff; }
+
+    /* SECTIONS */
+    section { padding:70px 60px; opacity:0; transform:translateY(40px); animation:fadeUp 1s forwards; }
+
+    .section-title { font-size:34px; font-weight:700; margin-bottom:30px; color:#003a70; text-align:center; }
+    body.dark .section-title { color:#93c5fd; }
+
+    /* GRID */
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
+    .card { background:white; border-radius:12px; padding:25px; box-shadow:0 5px 20px rgba(0,0,0,0.06); transition:0.3s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+    body.dark .card { background:#1f2430; box-shadow:none; }
+
+    /* BOOKING */
+    .booking-box { background:white; padding:30px; max-width:500px; margin:auto; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.06); }
+    body.dark .booking-box { background:#1f2430; }
+    .booking-box input, .booking-box select { width:100%; padding:12px; margin-top:10px; border:1px solid #ddd; border-radius:6px; }
+    .booking-box button { margin-top:20px; padding:12px; width:100%; background:#0055a5; border:none; color:white; border-radius:6px; cursor:pointer; font-size:18px; }
+
+    /* FOOTER */
+    .footer { background:#003a70; padding:40px; color:white; text-align:center; margin-top:50px; }
+    body.dark .footer { background:#111827; }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h2>Physiologist</h2>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#research">Research</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle-btn" onclick="toggleDark()">Dark Mode</button>
+  </div>
+
+  <div class="hero">
+    <h1>Advancing Human Physiology for a Healthier Tomorrow</h1>
+    <p>Professional physiologist dedicated to scientific excellence, patient care, and modern research.</p>
+    <button onclick="document.getElementById('booking').scrollIntoView()">Book Consultation</button>
+  </div>
+
+  <section id="about">
+    <h2 class="section-title">About the Physiologist</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Professional Expertise</h3><p>Muscular recovery, biomechanics, rehabilitation sciences, and performance.</p></div>
+      <div class="card"><h3>Modern Research</h3><p>Cellular studies, exercise physiology, neural pathways.</p></div>
+      <div class="card"><h3>Patient Focused</h3><p>Evidence-based, patient-centered treatment for optimal recovery.</p></div>
+    </div>
+  </section>
+
+  <section id="services" style="background:#eef6ff;">
+    <h2 class="section-title">Services Provided</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Physical Assessment</h3><p>Evaluation of posture, mobility, and musculoskeletal conditions.</p></div>
+      <div class="card"><h3>Rehabilitation Programs</h3><p>Custom plans for injury recovery and chronic pain.</p></div>
+      <div class="card"><h3>Performance Enhancement</h3><p>Strength and conditioning for athletes.</p></div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="section-title">Research Areas</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Cellular Physiology</h3><p>Cell function and energy pathways.</p></div>
+      <div class="card"><h3>Neurophysiology</h3><p>Neuron behavior and sensory systems.</p></div>
+      <div class="card"><h3>Exercise Physiology</h3><p>Metabolism, fatigue, cardiovascular performance.</p></div>
+    </div>
+  </section>
+
+  <section id="booking" style="background:#eef2f7;">
+    <h2 class="section-title">Book an Appointment</h2>
+    <div class="booking-box">
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="date" />
+      <select>
+        <option>Select Service</option>
+        <option>Physical Assessment</option>
+        <option>Rehabilitation</option>
+        <option>Performance Training</option>
+      </select>
+      <button>Submit Booking</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p style="text-align:center; font-size:20px;">Email: example@clinic.com | Phone: +91 90000 00000</p>
+  </section>
+
+  <div class="footer">© 2025 Physiologist Demo Website. All Rights Reserved.</div>
+
+  <script>
+    function toggleDark(){ document.body.classList.toggle('dark'); }
+  </script>
+</body>
+</html>
